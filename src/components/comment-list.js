@@ -5,9 +5,6 @@ const CommentList = (props) => {
   return (
     <ol className = 'list-comments'>
       {
-        console.log('say hi')
-      }
-      {
         
         comments.map(comment => {
           return (

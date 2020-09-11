@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {addComment, deleteComment} from '../actions/index'
+import {addComment, deleteComment} from '../actions/actions'
 
 import CommentList from '../components/comment-list';
 import AddComment from '../components/add-comment';
@@ -8,7 +8,7 @@ import AddComment from '../components/add-comment';
 let App = (props) => {
   const {
     comments, addComment, deleteComment
-  } = props
+  } = props;
   return (
     <div className = 'container'>
       <AddComment addComment = {addComment} />

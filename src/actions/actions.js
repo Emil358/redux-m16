@@ -1,5 +1,6 @@
-// let nextCommentId = JSON.parse(localStorage.getItem('comments')) + 1;
-let nextCommentId = 4
+let state = localStorage.getItem('comments') === null ? 4 : JSON.parse(localStorage.getItem('comments'));
+let nextCommentId = localStorage.getItem('comments') === null ? 4 : JSON.parse(localStorage.getItem('comments')).length === 0 ? 1 : state[state.length  - 1].id + 1;
+
 export const addComment = (name, text) => {
 
   const newTime = new Date();

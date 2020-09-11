@@ -8,14 +8,12 @@ const AddComment = ({addComment}) => {
       <label htmlFor = 'name' className = 'top'>*Введите ваше имя</label>
       <input 
         type='text' 
-        // value = {inputValue}
         onChange = {ev => {inputValue = ev.target.value}}
         className = 'name bottom'
         id = 'name'
       />
       <label htmlFor = 'text' className = 'top'>*Введите текст коментария</label>
       <textarea  
-        // value = {textareaValue}
         onChange = {ev => {textareaValue = ev.target.value}}
         className = 'text bottom'
         id = 'text'
@@ -26,8 +24,8 @@ const AddComment = ({addComment}) => {
       {
         if (inputValue !== '' && textareaValue !== '') {
           addComment(inputValue, textareaValue);
-          inputValue = '';
-          textareaValue = '';
+          document.querySelector('#name').value = '';
+          document.querySelector('#text').value = '';
         }
       }}>Add</button>
     </div>
