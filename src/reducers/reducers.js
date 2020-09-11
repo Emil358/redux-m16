@@ -1,7 +1,6 @@
 const comments = (state = [], action) => {
   switch (action.type) {
     case 'ADD_COMMENT':
-      console.log([...state, {id: action.id, name: action.name, text: action.text, time: action.time}]);
       localStorage.setItem('comments', JSON.stringify([...state, {id: action.id, name: action.name, text: action.text, time: action.time}]));
       return [...state, {id: action.id, name: action.name, text: action.text, time: action.time}];
 
@@ -22,7 +21,6 @@ const comments = (state = [], action) => {
         state = state.slice(0, index);
         newState = state;
       }
-      console.log(newState);
       localStorage.setItem('comments', JSON.stringify(newState));
       return newState;
 
